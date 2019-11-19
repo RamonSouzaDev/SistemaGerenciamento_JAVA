@@ -1,0 +1,19 @@
+
+create table funcionarios(
+cpf_FUNCIONAIRO varchar(11) not null primary key,
+nome_FUNCIONARIO varchar(120) not null,
+dataNascimento_FUNCIONARIO varchar(20) not null,
+endereco_FUNCIONARIO varchar(150) not null,
+bairro_FUNCIONARIO varchar(60) not null,
+cidade_FUNCIONARIO varchar(60) not null, 
+telefone_FUNCIONARIO varchar(11) not null,
+email_FUNCIONARIO varchar(150) not null,
+foto_FUNCIONARIO varchar(200),
+pai_FUNCIONARIO varchar(120) not null,
+mae_FUNCIONARIO varchar(120) not null,
+periodo_FUNCIONARIO varchar(10) not null,
+cargo_FUNCIONARIO varchar(50) not null,
+banco_FUNCIONARIO varchar(15) not null,
+naturalidade_FUNCIONARIO varchar(25) not null,
+status_FUNCIONARIO int not null
+) ;
