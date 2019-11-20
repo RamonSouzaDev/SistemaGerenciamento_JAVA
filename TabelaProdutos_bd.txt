@@ -1,0 +1,10 @@
+
+create table produtos(
+codigo_PRODUTO int not null primary key,
+qtdeEstoque_PRODUTO int not null,
+nome_PRODUTO varchar(50) not null,
+descricao_PRODUTO varchar(150) not null,
+foto_PRODUTO varchar(200) not null,
+valorCompra_PRODUTO float not null, 
+valorVenda_PRODUTO float not null
+) ;

@@ -402,7 +402,10 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
                         funcionarioAtual.setSalario(txtCampos[13].getText());
                         funcionarioAtual.setPeriodo(txtCampos[14].getText());
                         funcionarioAtual.setBanco(txtCampos[15].getText());
-                       
+                        funcionarioAtual.setStatus(1);
+                        funcionarioAtual.setFoto(txtCampos[0].getText() + "." + extensao);
+                        
+
                         
                         FuncionariosDAO.alterarFuncionario(funcionarioAtual, tmpCpf);
                         JOptionPane.showMessageDialog(null, "Dados alterados.");
@@ -523,7 +526,8 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
                 dados[1] = tmpFuncionario.getNome();
                 dados[2] = tmpFuncionario.getCidade();
                 dados[3] = tmpFuncionario.getTelefone();
-
+                
+                
                 mdlFuncionarios.addRow(dados);
             }
 
@@ -550,9 +554,13 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
         txtCampos[13].setText(tmpFuncionario.getSalario());
         txtCampos[14].setText(tmpFuncionario.getPeriodo());
         txtCampos[15].setText(tmpFuncionario.getBanco());
+        
+        
         statusAtual = tmpFuncionario.getStatus();
 
-        lblFoto.setIcon(new ImageIcon("img/system/" + tmpFuncionario.getFoto()));
+        lblFoto.setIcon(new ImageIcon("Users/Junior/Desktop/Ramon Mendes/4CIC - 2019.2 - Prog. Avanc/ManagementSystem/img/system/" + tmpFuncionario.getFoto()));
+        
+       // C:\\Users/Junior/Desktop/Ramon Mendes/4CIC - 2019.2 - Prog. Avanc/ManagementSystem/img/system
 
         if (tmpFuncionario.getStatus() == 0) {
             txtCampos[0].setForeground(Color.red); //cpf
