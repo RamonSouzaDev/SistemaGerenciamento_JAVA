@@ -159,7 +159,7 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
         bbrBuscar = new BotoesBarra(4,icnBuscar,"Buscar por CPF");
         tbrFuncionarios.add(bbrBuscar);
         
-        bbrExcluir = new BotoesBarra(5,icnExcluir,"Remover cliente atual");
+        bbrExcluir = new BotoesBarra(5,icnExcluir,"Remover funcionario atual");
         bbrExcluir.setEnabled(false);
         tbrFuncionarios.add(bbrExcluir);
         
@@ -326,7 +326,7 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
                     //salvar a foto
                     int ultimoPonto = strNomeArquivoOrigem.lastIndexOf(".");//pegando a posição do ultimo ponto
                     extensao = strNomeArquivoOrigem.substring(ultimoPonto + 1, strNomeArquivoOrigem.length());
-                    strCaminhoDestino = "img\\system\\" + txtCampos[0].getText() + "." + extensao;
+                    strCaminhoDestino = "C:\\Users\\Junior\\Desktop\\Ramon Mendes\\4CIC - 2019.2 - Prog. Avanc\\ManagementSystem\\img\\system" + txtCampos[0].getText() + "." + extensao;
 
                     try {
                         flsEntrada = new FileInputStream(strCaminhoOrigem);
@@ -402,6 +402,7 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
                         funcionarioAtual.setSalario(txtCampos[13].getText());
                         funcionarioAtual.setPeriodo(txtCampos[14].getText());
                         funcionarioAtual.setBanco(txtCampos[15].getText());
+                       
                         
                         FuncionariosDAO.alterarFuncionario(funcionarioAtual, tmpCpf);
                         JOptionPane.showMessageDialog(null, "Dados alterados.");
@@ -415,7 +416,7 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
 
         } else if (evt.getSource() == btnFoto) {
 
-            JFileChooser flcFoto = new JFileChooser("C:\\Users\\280104398\\Documents");
+            JFileChooser flcFoto = new JFileChooser("C:\\Users\\Junior\\Desktop\\Ramon Mendes\\4CIC - 2019.2 - Prog. Avanc\\ManagementSystem\\img\\system");
             FileNameExtensionFilter filtro = new FileNameExtensionFilter("Arquivos de imagem(*.png, *.jpg)", "png", "jpg");
             flcFoto.setFileFilter(filtro);//vinculando chooser ao filtro
             statusFoto = flcFoto.showOpenDialog(this);//abre o explorer
@@ -445,7 +446,7 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
 
         } else if (evt.getSource() == btnNome) {
             String nome = JOptionPane.showInputDialog(
-                    "Entre com o nome do cliente.");
+                    "Entre com o nome do funcionario.");
 
             carregarDados(2, nome);
             txtBusca.setText("");
@@ -459,7 +460,7 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
 
         }else if(evt.getSource() == mniConsulta){
             String cpf = JOptionPane.showInputDialog
-                            ("Informe o CPF do cliente:");
+                            ("Informe o CPF do funcionario:");
             
             try{
                 FuncionariosVO dadosFuncionario = FuncionariosDAO.consultarFuncionario(cpf);
@@ -541,14 +542,14 @@ public class FuncionariosView extends JInternalFrame implements ActionListener {
         txtCampos[5].setText(tmpFuncionario.getCidade());
         txtCampos[6].setText(tmpFuncionario.getTelefone());
         txtCampos[7].setText(tmpFuncionario.getEmail());
-        txtCampos[7].setText(tmpFuncionario.getNaturalidade());
-        txtCampos[7].setText(tmpFuncionario.getNumeroPIS());
-        txtCampos[7].setText(tmpFuncionario.getPai());
-        txtCampos[7].setText(tmpFuncionario.getMae());
-        txtCampos[7].setText(tmpFuncionario.getCargo());
-        txtCampos[7].setText(tmpFuncionario.getSalario());
-        txtCampos[7].setText(tmpFuncionario.getPeriodo());
-        txtCampos[7].setText(tmpFuncionario.getBanco());
+        txtCampos[8].setText(tmpFuncionario.getNaturalidade());
+        txtCampos[9].setText(tmpFuncionario.getNumeroPIS());
+        txtCampos[10].setText(tmpFuncionario.getPai());
+        txtCampos[11].setText(tmpFuncionario.getMae());
+        txtCampos[12].setText(tmpFuncionario.getCargo());
+        txtCampos[13].setText(tmpFuncionario.getSalario());
+        txtCampos[14].setText(tmpFuncionario.getPeriodo());
+        txtCampos[15].setText(tmpFuncionario.getBanco());
         statusAtual = tmpFuncionario.getStatus();
 
         lblFoto.setIcon(new ImageIcon("img/system/" + tmpFuncionario.getFoto()));

@@ -19,28 +19,28 @@ public class FuncionariosDAO {
             sqlCadFun += "telefone_FUNCIONARIO, email_FUNCIONARIO,";
             sqlCadFun += "naturalidade_FUNCIONARIO, pis_FUNCIONARIO,";
             sqlCadFun += "pai_FUNCIONARIO, mae_FUNCIONARIO,";
-            sqlCadFun += "foto_FUNCIONARIO, status_FUNCIONARIO,";
             sqlCadFun += "cargo_FUNCIONARIO, periodo_FUNCIONARIO,";
             sqlCadFun += "salario_FUNCIONARIO,";
-            sqlCadFun += "banco_FUNCIONARIO)";
+            sqlCadFun += "banco_FUNCIONARIO,";
+            sqlCadFun += "foto_FUNCIONARIO, status_FUNCIONARIO)";
             sqlCadFun += "values(";
-            sqlCadFun += "'" + tmpFuncionario.getCpf() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getNome() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getDataNascimento() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getEndereco() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getBairro() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getCidade() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getTelefone() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getEmail() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getNaturalidade() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getNumeroPIS() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getPai() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getMae() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getCargo() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getSalario() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getPeriodo() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getBanco() + "',";
-            sqlCadFun += "'" + tmpFuncionario.getFoto() + "',1)";
+            sqlCadFun += "'" + tmpFuncionario.getCpf() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getNome() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getDataNascimento() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getEndereco() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getBairro() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getCidade() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getTelefone() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getEmail() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getNaturalidade() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getNumeroPIS() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getPai() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getMae() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getCargo() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getPeriodo() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getSalario() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getBanco() + "', ";
+            sqlCadFun += "'" + tmpFuncionario.getFoto() + "', 1)";
             
 
             //preparando statement para execução do INSERT
@@ -83,8 +83,18 @@ public class FuncionariosDAO {
                 tmpFuncionario.setCidade(rsFuncionarios.getString("cidade_FUNCIONARIO"));
                 tmpFuncionario.setTelefone(rsFuncionarios.getString("telefone_FUNCIONARIO"));
                 tmpFuncionario.setEmail(rsFuncionarios.getString("email_FUNCIONARIO"));
+                tmpFuncionario.setNaturalidade(rsFuncionarios.getString("naturalidade_FUNCIONARIO"));
+                tmpFuncionario.setNumeroPIS(rsFuncionarios.getString("pis_FUNCIONARIO"));
+                tmpFuncionario.setPai(rsFuncionarios.getString("pai_FUNCIONARIO"));
+                tmpFuncionario.setMae(rsFuncionarios.getString("mae_FUNCIONARIO"));
+                tmpFuncionario.setCargo(rsFuncionarios.getString("cargo_FUNCIONARIO"));
+                tmpFuncionario.setPeriodo(rsFuncionarios.getString("periodo_FUNCIONARIO"));
+                tmpFuncionario.setSalario(rsFuncionarios.getString("salario_FUNCIONARIO"));
+                tmpFuncionario.setBanco(rsFuncionarios.getString("banco_FUNCIONARIO"));
                 tmpFuncionario.setFoto(rsFuncionarios.getString("foto_FUNCIONARIO"));
                 tmpFuncionario.setStatus(rsFuncionarios.getInt("status_FUNCIONARIO"));
+
+            
 
                 ConexaoDAO.fecharConexao();
                 return tmpFuncionario;
@@ -150,7 +160,7 @@ public class FuncionariosDAO {
                 tmpFuncionario.setBanco(rsFuncionarios.getString("banco_FUNCIONARIO"));
                 tmpFuncionario.setNaturalidade(rsFuncionarios.getString("naturalidade_FUNCIONARIO"));
                 tmpFuncionario.setFoto(rsFuncionarios.getString("foto_FUNCIONARIO"));
-                tmpFuncionario.setStatus(rsFuncionarios.getInt("status_FUNCIONARIO"));
+                //tmpFuncionario.setStatus(rsFuncionarios.getInt("status_FUNCIONARIO"));
 
                 lstFuncionarios.add(tmpFuncionario);
             }
