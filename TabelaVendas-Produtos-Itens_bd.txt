@@ -1,0 +1,25 @@
+CREATE TABLE `itens` (
+  `codigoVenda_ITEM` int(11) NOT NULL,
+  `codigoProduto_ITEM` int(11) NOT NULL,
+  `quantidade_ITEM` int(11) NOT NULL,
+  `valorUnitario_ITEM` float NOT NULL,
+  PRIMARY KEY (`codigoVenda_ITEM`,`codigoProduto_ITEM`)
+) 
+CREATE TABLE `vendas` (
+  `cod_VENDA` int(11) NOT NULL AUTO_INCREMENT,
+  `data_VENDA` varchar(45) NOT NULL,
+  `valor_TOTAL` float NOT NULL,
+  `cpfcliente_VENDA` varchar(11) NOT NULL,
+  PRIMARY KEY (`cod_VENDA`)
+)  
+CREATE TABLE `produtos` (
+  `codigo_PRODUTO` int(11) NOT NULL AUTO_INCREMENT,
+  `nome_PRODUTO` varchar(100) NOT NULL,
+  `descricao_PRODUTO` text,
+  `quantidadeEstoque_PRODUTO` int(11) NOT NULL,
+  `valorCompra_PRODUTO` float NOT NULL,
+  `valorVenda_PRODUTO` float NOT NULL,
+  `foto_PRODUTO` varchar(200) DEFAULT NULL,
+  `codigoCategoria_PRODUTO` int(11) NOT NULL,
+  PRIMARY KEY (`codigo_PRODUTO`)
+) 

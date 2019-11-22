@@ -34,6 +34,10 @@ public class ItensVO {
     public void setValorUnitario(float valorUnitario) {
         this.valorUnitario = valorUnitario;
     }
+
+    int getQtdeItem() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

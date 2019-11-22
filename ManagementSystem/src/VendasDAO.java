@@ -1,4 +1,5 @@
 import java.sql.*;
+import java.util.List;
 
 public class VendasDAO {
     
@@ -31,6 +32,10 @@ public class VendasDAO {
             throw new Exception(msg); 
         }
         return novoID;
+    }
+
+    static void cadastrarVenda(List<ItensVO> itens, VendasVO objVenda) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }
